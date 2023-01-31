@@ -1,0 +1,7 @@
+.contenedor{
+    border: 1px solid rgba(13,110,253);
+    padding: 40px;
+    border-radius: 40px;
+    margin: 50px;
+    width: 450px;
+}

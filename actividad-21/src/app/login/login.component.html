@@ -1,0 +1,29 @@
+<div class="contenedor">
+  <div *ngIf="(submitted) && (formulario.controls.username.value !== 'AD' || formulario.controls.password.value !== '123456')" class="alert alert-danger" role="alert">
+    Username or password is incorrect
+  </div>
+  <br>
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <h1>Login</h1>
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" class="form-control" id="username" placeholder="Username" formControlName="username">
+      <span class="text-danger"
+        *ngIf="formulario.controls.username.touched && formulario.controls.username.errors?.required">
+        Username is required
+      </span>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">password</label>
+      <input type="password" class="form-control" id="password" formControlName="password">
+      <span class="text-danger"
+        *ngIf="formulario.controls.password.touched && formulario.controls.password.errors?.required">
+        Password is required
+      </span>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Login</button>
+    </div>
+    <div>{{this.resultado}}</div>
+  </form>
+</div>
